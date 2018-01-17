@@ -21,6 +21,10 @@ The search for frequent item sets aims at finding items, which often occur colle
 | 789  | APPLE, BANANA, CUCUMBER, EGGS  |
 | 911  |  BANANA, EGGS  |
 
+The most frequent items are: BANANA, CUCUMBER, EGGS
+
+Frequency is calculated base on threshold which by default is 60% of all applications. (For above example - 2).
+
 ### What is the advantage of this library? 
 
 Main advantage of library is that it is extremely lightweight and simple for usage.
@@ -41,7 +45,7 @@ Unit {
 }
 ```
 Where "value" field is unique identifier (it will be used for classification) for the Unit.
-Let's assume that user stores in database applications (collections) of Units. In order to calculate Apriori needs the following mapping:
+Let's assume that user stores in database applications (collections) of Units (where application is logical group of Units consolidated by transaction). In order to calculate Apriori needs the following mapping:
 ```java 
 Item item = new Item(Unit.value); 
 or
